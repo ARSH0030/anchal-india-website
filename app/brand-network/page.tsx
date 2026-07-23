@@ -1,0 +1,8 @@
+import type { Metadata } from "next";
+import { Breadcrumb, PageHero } from "@/components/inner-page";
+import { BrandRail, RfqBanner, SectionHeading } from "@/components/site";
+import { partnerBrands } from "@/data/catalog";
+export const metadata:Metadata={title:"Brand Network",description:"Explore Anchal India's multi-brand automotive component sourcing network."};
+export default function Network(){return <><PageHero eyebrow="Brand network" title="Strong brands. Connected through one experienced partner." copy="Our network helps international buyers access complementary automotive component categories with coordinated commercial and export support."/><Breadcrumb current="Brand Network"/>
+ <section className="section network-page"><div className="container"><BrandRail brands={partnerBrands}/><p className="legal-note">References to brand names describe products and relationships within our sourcing and supply network. They do not imply universal authorization, exclusivity or availability across every territory.</p></div></section>
+ <section className="section section-light"><div className="container"><SectionHeading eyebrow="Network value" title="Choice without fragmented coordination."/><div className="three-grid">{[["Complementary coverage","Combine specialized brands across engine, electrical, controls, braking, suspension and more."],["Application alignment","Match vehicle and product references before building the commercial offer."],["One export interface","Coordinate requirements, documentation and consolidation through one team."]].map(([t,c])=><article className="info-card" key={t}><h3>{t}</h3><p>{c}</p></article>)}</div></div></section><RfqBanner/></>}

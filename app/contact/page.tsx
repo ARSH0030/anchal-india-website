@@ -1,0 +1,6 @@
+import type { Metadata } from "next";
+import { Breadcrumb, PageHero } from "@/components/inner-page";
+import { ContactForm } from "@/components/site";
+export const metadata:Metadata={title:"Contact & RFQ",description:"Contact Anchal India or submit an automotive component RFQ."};
+export default function Contact(){return <><PageHero eyebrow="Contact / RFQ" title="Tell us what you need. We’ll map the right route." copy="Share a vehicle list, product group, OEM reference or existing part number. Our team will review the requirement and respond with the next step."/><Breadcrumb current="Contact / RFQ"/>
+ <section className="section section-light"><div className="container contact-layout"><div><p className="eyebrow"><span/>Export enquiries</p><h2>Mr. Arsh Tyagi</h2><div className="contact-lines"><a href="tel:+919999029920"><span>Mobile / WhatsApp</span>+91 99990 29920</a><a href="mailto:info@anchalpiston.com"><span>Email</span>info@anchalpiston.com</a><a href="mailto:arsh@anchalpiston.com"><span>Direct email</span>arsh@anchalpiston.com</a><p><span>Address</span>189 Phase-1, Radhey Shyam Vihar,<br/>Muradnagar, Ghaziabad, U.P. 201206, India</p></div></div><ContactForm/></div></section></>}
