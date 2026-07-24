@@ -1,18 +1,5 @@
-import type { Metadata } from "next";
-import { Breadcrumb, PageHero } from "@/components/inner-page";
-import { RfqBanner, SectionHeading } from "@/components/site";
-import { markets } from "@/data/catalog";
-
-export const metadata: Metadata = {
-  title: "Global Presence",
-  description: "Anchal India's global automotive outlook and established market strength across Latin America.",
-};
-
-export default function Presence() {
-  return <><PageHero eyebrow="Global presence" title="Worldwide ambition. Proven regional strength." copy="Our capabilities are global, while nearly two decades of market experience have made Latin America our strongest established international region."/><Breadcrumb current="Global Presence"/>
-    <section className="section presence-hero"><div className="container presence-layout"><div className="map-visual"><div className="india-pin">INDIA</div><div className="latam-shape">LATIN<br/>AMERICA</div></div><div><SectionHeading eyebrow="Strongest established market" title="Deep Latin American familiarity."/><p>We pursue opportunities worldwide and bring particular depth to Latin America. Vehicle populations, model names and commercial expectations differ across borders; our approach responds to those differences.</p></div></div></section>
-    <section className="section section-light"><div className="container"><SectionHeading eyebrow="Established market knowledge" title="Relationships across Latin America."/><div className="country-grid">{markets.map((market,index)=><div key={market}><span>{String(index+1).padStart(2,"0")}</span><b>{market}</b></div>)}</div></div></section>
-    <section className="section soft-section"><div className="container"><div className="three-grid">{[["Global outlook","International opportunities supported from India through a flexible, relationship-led approach."],["Responsive communication","English-led export support with a Spanish-ready digital architecture."],["Shipment coordination","Commercial documentation and consolidation planning for worldwide movement."]].map(([title,copy])=><article className="info-card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
-    <RfqBanner/>
-  </>;
-}
+import { Breadcrumb, PageHero } from "@/components/inner-page"; import { RfqBanner, SectionHeading, WorldReach } from "@/components/site"; import { markets } from "@/data/catalog";
+const flags=["🇨🇴","🇬🇹","🇭🇳","🇵🇪","🇪🇨","🇨🇱","🇩🇴","🇲🇽","🇦🇷","🇺🇾","🇧🇴","🇳🇮","🇭🇹"];
+export default function Presence(){return <><PageHero eyebrow="Global presence" title="Worldwide perspective. Proven regional depth." copy="India is our origin. The world is our market. Latin America remains our strongest established international region."/><Breadcrumb current="Global Presence"/>
+<section className="section global-v3"><div className="container global-v3-grid"><div><SectionHeading dark eyebrow="Global first · 60%" title="A network designed to move outward." copy="The map expresses our global outlook without claiming offices or established business in regions that have not been verified."/></div><WorldReach/></div></section>
+<section className="section region-explorer"><div className="container"><SectionHeading eyebrow="Established market knowledge · 40%" title="Latin America, explored country by country." copy="The following markets reflect the country list supplied by Anchal India. Future regions will only be added after verification."/><div className="continent-panel"><aside><span>AMERICAS</span><h3>Latin America</h3><p>Strongest established international region</p></aside><div className="flag-grid">{markets.map((m,i)=><div key={m}><b>{flags[i]}</b><span>{m}</span></div>)}</div></div></div></section><RfqBanner/></>}

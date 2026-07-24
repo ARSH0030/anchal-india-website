@@ -1,23 +1,4 @@
-import type { Metadata } from "next";
-import { Breadcrumb, PageHero } from "@/components/inner-page";
-import { RfqBanner, SectionHeading } from "@/components/site";
-
-export const metadata: Metadata = {
-  title: "Beyond Automotive",
-  description: "Explore Anchal India's selected capabilities beyond automotive.",
-};
-
-const sectors = [
-  ["Textiles", "Fabrics, garments and home-textile opportunities supported by established industry relationships."],
-  ["Home Appliances", "Selected consumer and household appliance programs for international business requirements."],
-  ["Building Materials", "Tiles, granite and marble solutions for distributors and project-led requirements."],
-  ["Medicare & Healthcare", "Selected medical and healthcare products developed through qualified business networks."],
-];
-
-export default function BeyondAutomotive() {
-  return <><PageHero eyebrow="Beyond Automotive" title="Focused expertise. Broader possibilities." copy="Automotive remains our flagship business. Our international relationships and commercial experience also enable selected opportunities across complementary industries."/><Breadcrumb current="Beyond Automotive"/>
-    <section className="section section-light"><div className="container"><SectionHeading eyebrow="Selected industries" title="Built carefully, one relationship at a time." copy="These capabilities are a focused extension of Anchal India—not a replacement for the automotive expertise at the heart of our company."/><div className="value-grid">{sectors.map(([title,copy],index)=><article className="value-card" key={title}><span>0{index+1}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
-    <section className="section soft-section"><div className="container editorial-grid"><div><SectionHeading eyebrow="Our approach" title="Opportunity backed by accountability."/><p className="large-copy">We bring the same relationship-led mindset, commercial discipline and international coordination that define our automotive business.</p><p>Every opportunity is evaluated on its own merits, with clear scope, dependable communication and long-term value at the centre.</p></div><aside className="founder-card"><p>Flagship business</p><h3>Automotive Solutions</h3><hr/><p>Extended capabilities</p><h3>Four selected sectors</h3></aside></div></section>
-    <RfqBanner/>
-  </>;
-}
+import Image from "next/image"; import { Breadcrumb, PageHero } from "@/components/inner-page"; import { RfqBanner } from "@/components/site";
+const sectors=[["Textiles","Selected fabrics, garments and home-textile opportunities."],["Home Appliances","Selected consumer and household appliance programs."],["Tiles, Granite & Marble","Building-material opportunities for distribution and projects."],["Medicare & Healthcare","Selected healthcare products through qualified business networks."]];
+export default function Beyond(){return <><PageHero eyebrow="Beyond Automotive" title="Focused expertise. Broader possibilities." copy="Automotive remains our flagship business. Four carefully selected sectors extend our international commercial capability."/><Breadcrumb current="Beyond Automotive"/>
+<section className="section beyond-page-v3"><div className="container">{sectors.map(([a,b],i)=><article key={a}><div className={`sector-image sector-${i+1}`}><Image src="/beyond-industries-v3.png" alt="" fill sizes="50vw"/></div><span>0{i+1}</span><h2>{a}</h2><p>{b}</p><a href={`/contact?sector=${encodeURIComponent(a)}`}>Discuss an opportunity →</a></article>)}</div></section><RfqBanner/></>}
