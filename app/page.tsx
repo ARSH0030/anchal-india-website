@@ -9,9 +9,9 @@ export default function Home() {
         <div className="hero-grid" aria-hidden="true" />
         <div className="container hero-inner">
           <div className="hero-copy">
-            <p className="eyebrow"><span /> Automotive components • India to Latin America</p>
-            <h1>One partner.<br /><em>Multiple trusted brands.</em><br />Complete solutions.</h1>
-            <p className="hero-lead">Application-led sourcing, multi-brand consolidation and export support for two- and three-wheeler components—built on relationships since 2006.</p>
+            <p className="eyebrow"><span /> Global automotive solutions • Since 2006</p>
+            <h1>Your one trusted partner<br /><em>for complete automotive solutions.</em></h1>
+            <p className="hero-lead">Own brands, trusted partner brands, application knowledge, consolidation and international supply capability for two- and three-wheelers worldwide.</p>
             <div className="hero-actions">
               <Link className="button button-primary" href="/products">Find parts <span>→</span></Link>
               <Link className="button button-ghost" href="/contact">Start an RFQ</Link>
@@ -27,7 +27,7 @@ export default function Home() {
               <span className="orbit-label l3">Braking</span>
               <span className="orbit-label l4">Transmission</span>
             </div>
-            <div className="hero-stat"><strong>13+</strong><span>Latin American markets</span></div>
+            <div className="hero-stat"><strong>Global</strong><span>Strongest established market: Latin America</span></div>
           </div>
         </div>
         <CredibilityStrip />
@@ -74,13 +74,13 @@ export default function Home() {
 
       <section className="section section-light">
         <div className="container">
-          <SectionHeading eyebrow="Why Anchal" title="More than sourcing. A connected supply solution." />
+          <SectionHeading eyebrow="Why Anchal" title="More than products. A complete automotive solution." />
           <div className="value-grid">
             {[
               ["01","Application knowledge","Vehicle-first product identification across diverse two- and three-wheeler platforms."],
-              ["02","Multi-brand access","One commercial relationship connecting a broad, complementary component network."],
+              ["02","Own + partner brands","Ailyn and Harkes alongside a broad, complementary component network."],
               ["03","Export consolidation","Coordinated procurement, documentation and shipment planning across suppliers."],
-              ["04","Market understanding","Deep experience with the product, packaging and commercial needs of Latin America."],
+              ["04","Global market understanding","International capability shaped by deep, long-standing experience in Latin America."],
             ].map(([n,t,c]) => <article className="value-card" key={n}><span>{n}</span><h3>{t}</h3><p>{c}</p></article>)}
           </div>
         </div>
@@ -101,7 +101,17 @@ export default function Home() {
             <span className="map-line line-one" /><span className="map-line line-two" />
             <div className="india-pin">INDIA</div><div className="latam-shape">LATIN<br/>AMERICA</div>
           </div>
-          <div><p className="eyebrow"><span /> Latin America</p><h2>Local market understanding.<br />International supply capability.</h2><p>Our primary focus is Latin America, where long-term buyer relationships have shaped our approach to application coverage, consolidation and responsive support.</p><div className="market-tags">{markets.map(m=><span key={m}>{m}</span>)}</div><Link className="text-link" href="/global-presence">Explore our presence →</Link></div>
+          <div><p className="eyebrow"><span /> Global presence</p><h2>Worldwide ambition.<br />Proven Latin American strength.</h2><p>We serve international opportunities worldwide. Latin America is our strongest established market, where long-term buyer relationships have shaped our application coverage, consolidation and responsive support.</p><div className="market-tags">{markets.map(m=><span key={m}>{m}</span>)}</div><Link className="text-link" href="/global-presence">Explore our presence →</Link></div>
+        </div>
+      </section>
+
+      <section className="section soft-section">
+        <div className="container split-intro">
+          <SectionHeading eyebrow="Beyond Automotive" title="Automotive at our core. Broader capabilities by design." copy="Around ten percent of our story reflects selected opportunities beyond mobility—built through the same international relationships, commercial discipline and long-term outlook." />
+          <Link className="text-link" href="/beyond-automotive">Explore other industries →</Link>
+        </div>
+        <div className="container product-grid">
+          {["Textiles","Home Appliances","Tiles, Granite & Marble","Medicare & Healthcare"].map((sector, i) => <div className="product-tile" key={sector}><span>0{i+1}</span><h3>{sector}</h3><i>↗</i></div>)}
         </div>
       </section>
 
