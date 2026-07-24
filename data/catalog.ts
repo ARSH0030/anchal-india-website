@@ -4,7 +4,7 @@ export const productGroups = [
 ] as const;
 
 export const partnerBrands = ["Gabriel","UCAL","Pricol","Champion","Goetze","Suprajit","Flash","Uno Minda","Spark Minda","MK","Makino","Hero Rockman","IFB","Varroc","INEL"];
-export const markets = ["Colombia","Guatemala","Honduras","Peru","Ecuador","Chile","Dominican Republic","Mexico","Argentina","Uruguay","Bolivia","Nicaragua","Haiti"];
+export const markets = ["Latin America","Turkey","Middle East","Egypt","Philippines"];
 
 export type VehicleType = "Motorcycle" | "3-Wheeler";
 export type Vehicle = {

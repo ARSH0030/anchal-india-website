@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Footer, Navigation } from "@/components/navigation";
+import { CommunicationDock, Footer, Navigation } from "@/components/navigation";
 import { PageTransition } from "@/components/page-transition";
 import "./globals.css";
 
@@ -12,5 +12,5 @@ export const metadata:Metadata={
  robots:{index:true,follow:true},icons:{icon:"/favicon.svg",shortcut:"/favicon.svg"}
 };
 export default function RootLayout({children}:{children:React.ReactNode}){
- return <html lang="en"><body><Navigation/><main><PageTransition>{children}</PageTransition></main><Footer/><a className="floating-wa" href="https://wa.me/919999029920" target="_blank" rel="noreferrer" aria-label="Chat with Anchal India on WhatsApp">WA</a></body></html>
+ return <html lang="en"><body><Navigation/><main><PageTransition>{children}</PageTransition></main><Footer/><CommunicationDock/></body></html>
 }
