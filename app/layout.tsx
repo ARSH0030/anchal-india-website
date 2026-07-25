@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Footer, Navigation } from "@/components/navigation";
+import { CommunicationDock, Footer, Navigation } from "@/components/navigation";
 import "./globals.css";
-
-const geistSans=Geist({variable:"--font-geist-sans",subsets:["latin"]});
-const geistMono=Geist_Mono({variable:"--font-geist-mono",subsets:["latin"]});
 
 export const metadata:Metadata={
  metadataBase:new URL("https://anchalindia.com"),
@@ -17,5 +13,5 @@ export const metadata:Metadata={
 };
 
 export default function RootLayout({children}:{children:React.ReactNode}){
- return <html lang="en"><body className={`${geistSans.variable} ${geistMono.variable}`}><Navigation/><main>{children}</main><Footer/><a className="floating-wa" href="https://wa.me/919999029920" target="_blank" rel="noreferrer" aria-label="Chat with Anchal India on WhatsApp">WA</a></body></html>
+ return <html lang="en"><body><Navigation/><main>{children}</main><Footer/><CommunicationDock/></body></html>
 }

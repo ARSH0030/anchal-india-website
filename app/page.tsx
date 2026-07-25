@@ -1,129 +1,42 @@
 import Link from "next/link";
-import { BrandRail, CredibilityStrip, PartFinder, RfqBanner, SectionHeading } from "@/components/site";
-import { markets, partnerBrands, productGroups } from "@/data/catalog";
+import { BeyondGrid, BrandMarquee, PageCta, SectionTitle, VehicleExplorer, WorldMap } from "@/components/site";
 
 export default function Home() {
-  return (
-    <>
-      <section className="hero">
-        <div className="hero-grid" aria-hidden="true" />
-        <div className="container hero-inner">
-          <div className="hero-copy">
-            <p className="eyebrow"><span /> Global automotive solutions • Since 2006</p>
-            <h1>Your one trusted partner<br /><em>for complete automotive solutions.</em></h1>
-            <p className="hero-lead">Own brands, trusted partner brands, application knowledge, consolidation and international supply capability for two- and three-wheelers worldwide.</p>
-            <div className="hero-actions">
-              <Link className="button button-primary" href="/products">Find parts <span>→</span></Link>
-              <Link className="button button-ghost" href="/contact">Start an RFQ</Link>
-            </div>
-          </div>
-          <div className="hero-panel">
-            <div className="hero-orbit">
-              <span className="orbit one" />
-              <span className="orbit two" />
-              <div className="orbit-core">AI</div>
-              <span className="orbit-label l1">Engine</span>
-              <span className="orbit-label l2">Electrical</span>
-              <span className="orbit-label l3">Braking</span>
-              <span className="orbit-label l4">Transmission</span>
-            </div>
-            <div className="hero-stat"><strong>Global</strong><span>Strongest established market: Latin America</span></div>
-          </div>
-        </div>
-        <CredibilityStrip />
-      </section>
+  return <>
+    <section className="home-hero">
+      <div className="hero-motion"><span className="hero-wheel w-one"/><span className="hero-wheel w-two"/><span className="hero-machine"/><span className="hero-parts p1"/><span className="hero-parts p2"/><span className="hero-parts p3"/></div>
+      <div className="hero-shade"/><div className="shell hero-content">
+        <p className="hero-kicker">GLOBAL AUTOMOTIVE SOLUTIONS · SINCE 2006</p>
+        <h1>Your one trusted partner <em>for complete automotive solutions.</em></h1>
+        <p>Our own brands, application expertise and a trusted automotive network—delivering complete solutions from India to businesses worldwide.</p>
+        <div className="hero-actions"><Link href="/products" className="action-button">Explore solutions →</Link><Link href="/contact" className="text-action">Talk to our team ↗</Link></div>
+        <strong className="hero-world">FROM INDIA.<br/>BUILT FOR THE WORLD.</strong>
+      </div>
+    </section>
 
-      <section className="section section-light">
-        <div className="container">
-          <SectionHeading eyebrow="Our own brands" title="Built for the realities of the aftermarket." copy="Ailyn and Harkes bring focused product programs, clear application coverage and dependable commercial support to our international partners." />
-          <div className="brand-feature-grid">
-            <article className="brand-feature ailyn">
-              <div className="brand-mark">A</div><div><p>Precision range</p><h3>AILYN</h3><span>Engine, transmission & service components</span></div><Link href="/brands">Explore Ailyn →</Link>
-            </article>
-            <article className="brand-feature harkes">
-              <div className="brand-mark">H</div><div><p>Dependable mobility</p><h3>HARKES</h3><span>Electrical, controls & chassis components</span></div><Link href="/brands">Explore Harkes →</Link>
-            </article>
-          </div>
+    <section className="section story-intro">
+      <div className="shell two-col">
+        <div className="exploded-visual"><div className="machine-core"/>{["ENGINE","ELECTRICAL","BRAKING","SUSPENSION"].map((x,i)=><span key={x} className={`part-label pl${i+1}`}>{x}</span>)}</div>
+        <div><SectionTitle kicker="WHO WE ARE" title="More than parts. Complete automotive solutions." copy="Since 2006, Anchal India has built an automotive ecosystem combining our own brands, application expertise, trusted industry relationships and global supply capabilities."/>
+          <div className="chapter-links"><Link href="/about#journey">Our Journey <span>↗</span></Link><Link href="/about#process">Our Capability <span>↗</span></Link><Link href="/global-presence">Our Reach <span>↗</span></Link></div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section className="section network-section">
-        <div className="container">
-          <SectionHeading dark eyebrow="Brand network" title="The right brand for every requirement." copy="A carefully developed network of established component brands helps us build cohesive, market-relevant offers across major vehicle systems." />
-          <BrandRail brands={partnerBrands} />
-          <p className="legal-note">Brand names are shown to describe our sourcing and supply network. Availability and commercial status may vary by market and product line.</p>
-        </div>
-      </section>
+    <section className="section systems-section"><div className="shell"><SectionTitle center kicker="COMPLETE VEHICLE COVERAGE" title="Understand the machine. Discover the solution." copy="Explore the systems we support across motorcycles and three-wheelers."/><VehicleExplorer/></div></section>
 
-      <section className="section section-light">
-        <div className="container split-intro">
-          <SectionHeading eyebrow="Complete 2W & 3W solutions" title="From a single component to a complete market program." copy="Our application knowledge connects vehicle, system and supplier information—helping buyers reduce search time and build a commercially relevant range." />
-          <div className="system-count"><strong>10</strong><span>Core product groups</span></div>
-        </div>
-        <div className="container product-grid">
-          {productGroups.map((group, i) => <div className="product-tile" key={group}><span>{String(i + 1).padStart(2, "0")}</span><h3>{group}</h3><i>↗</i></div>)}
-        </div>
-      </section>
+    <section className="section own-brands"><div className="shell"><SectionTitle kicker="OUR BRANDS" title="Built around real aftermarket demand." copy="AILYN and HARKES are owned by Anchal India and developed with equal commitment to application coverage, dependable quality and long-term customer confidence."/>
+      <div className="brand-panels">
+        <Link href="/brand-network#own-brands" className="brand-panel ailyn-panel"><span>OWNED BY ANCHAL INDIA</span><b>AILYN</b><small>Think Quality. Think Ailyn.</small><i>Discover the brand →</i></Link>
+        <Link href="/brand-network#own-brands" className="brand-panel harkes-panel"><span>OWNED BY ANCHAL INDIA</span><b>HARKES</b><small>Built for dependable mobility.</small><i>Discover the brand →</i></Link>
+      </div>
+    </div></section>
 
-      <section className="section finder-section">
-        <div className="container">
-          <SectionHeading dark eyebrow="Application intelligence" title="Find the right parts. Faster." copy="Start with the vehicle you know. Our structured application system guides you from model to product group—and is ready to scale to OEM references and part numbers." />
-          <PartFinder />
-        </div>
-      </section>
+    <section className="network-strip"><div className="shell"><p>SELECTED NAMES WITHIN OUR AUTOMOTIVE NETWORK</p></div><BrandMarquee/><Link href="/brand-network">Explore Brands & Network →</Link></section>
 
-      <section className="section section-light">
-        <div className="container">
-          <SectionHeading eyebrow="Why Anchal" title="More than products. A complete automotive solution." />
-          <div className="value-grid">
-            {[
-              ["01","Application knowledge","Vehicle-first product identification across diverse two- and three-wheeler platforms."],
-              ["02","Own + partner brands","Ailyn and Harkes alongside a broad, complementary component network."],
-              ["03","Export consolidation","Coordinated procurement, documentation and shipment planning across suppliers."],
-              ["04","Global market understanding","International capability shaped by deep, long-standing experience in Latin America."],
-            ].map(([n,t,c]) => <article className="value-card" key={n}><span>{n}</span><h3>{t}</h3><p>{c}</p></article>)}
-          </div>
-        </div>
-      </section>
+    <section className="section global-home"><div className="shell global-layout"><div><SectionTitle kicker="GLOBAL REACH" title="From India. Built for the world." copy="From one point of coordination in India, we connect automotive requirements with application knowledge, multi-brand supply, consolidation and international delivery for diverse markets worldwide."/><Link className="text-action blue" href="/global-presence">Explore our global network ↗</Link></div><WorldMap/></div></section>
 
-      <section className="section supply-section">
-        <div className="container supply-layout">
-          <div><p className="eyebrow"><span /> Integrated supply</p><h2>Many requirements.<br />One coordinated shipment.</h2><p>We help buyers combine products from multiple component categories and brands into a structured supply program—reducing coordination overhead while preserving product choice.</p><Link className="text-link" href="/about">How we work →</Link></div>
-          <div className="supply-flow" aria-label="Sourcing to delivery process">
-            {["Application mapping","Multi-brand sourcing","Quality & document check","Export consolidation"].map((x,i)=><div key={x}><b>{i+1}</b><span>{x}</span></div>)}
-          </div>
-        </div>
-      </section>
-
-      <section className="section presence-section">
-        <div className="container presence-layout">
-          <div className="map-visual" aria-label="Latin American market presence">
-            <span className="map-line line-one" /><span className="map-line line-two" />
-            <div className="india-pin">INDIA</div><div className="latam-shape">LATIN<br/>AMERICA</div>
-          </div>
-          <div><p className="eyebrow"><span /> Global presence</p><h2>Worldwide ambition.<br />Proven Latin American strength.</h2><p>We serve international opportunities worldwide. Latin America is our strongest established market, where long-term buyer relationships have shaped our application coverage, consolidation and responsive support.</p><div className="market-tags">{markets.map(m=><span key={m}>{m}</span>)}</div><Link className="text-link" href="/global-presence">Explore our presence →</Link></div>
-        </div>
-      </section>
-
-      <section className="section soft-section">
-        <div className="container split-intro">
-          <SectionHeading eyebrow="Beyond Automotive" title="Automotive at our core. Broader capabilities by design." copy="Around ten percent of our story reflects selected opportunities beyond mobility—built through the same international relationships, commercial discipline and long-term outlook." />
-          <Link className="text-link" href="/beyond-automotive">Explore other industries →</Link>
-        </div>
-        <div className="container product-grid">
-          {["Textiles","Home Appliances","Tiles, Granite & Marble","Medicare & Healthcare"].map((sector, i) => <div className="product-tile" key={sector}><span>0{i+1}</span><h3>{sector}</h3><i>↗</i></div>)}
-        </div>
-      </section>
-
-      <section className="section credentials-preview">
-        <div className="container credentials-row">
-          <div><p className="eyebrow"><span /> Recognition</p><h2>Relationships built over time.</h2></div>
-          <div className="credential-card"><span>2006</span><p>Established foundation</p></div>
-          <div className="credential-card"><span>18+</span><p>Years of market experience</p></div>
-          <Link href="/credentials">View credentials →</Link>
-        </div>
-      </section>
-      <RfqBanner />
-    </>
-  );
+    <section className="section beyond-home"><div className="shell"><SectionTitle kicker="BEYOND AUTOMOTIVE" title="Broader capabilities. The same commitment." copy="Our international network also supports selected opportunities beyond mobility—built around clear specifications, responsible coordination and dependable execution."/><BeyondGrid/></div></section>
+    <PageCta title="Tell us what your market needs." copy="Start with a vehicle, code, product image, catalogue or complete requirement list."/>
+  </>;
 }
