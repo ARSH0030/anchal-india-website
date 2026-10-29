@@ -1,2 +1,3 @@
 import Link from "next/link";
+export const metadata={title:"Español próximamente",robots:{index:false,follow:true}};
 export default function SpanishPlaceholder(){return <section className="language-placeholder"><div><span>ES</span><h1>La experiencia en español estará disponible próximamente.</h1><p>Mientras tanto, nuestro equipo puede ayudarle con su consulta de repuestos para motocicletas y vehículos de tres ruedas.</p><Link className="button button-primary" href="/contact">Enviar consulta →</Link></div></section>}
