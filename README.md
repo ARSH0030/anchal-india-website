@@ -22,7 +22,7 @@ Open `http://localhost:3000`.
 The public pages build without secrets. RFQ email delivery requires:
 
 - `RESEND_API_KEY`: Resend server API key
-- `RFQ_FROM_EMAIL`: verified sender, for example `Anchal India <rfq@anchalindia.com>`
+- `RFQ_FROM_EMAIL`: verified sender, for example `Anchal India <rfq@anchalpiston.com>`
 - `RFQ_TO_EMAIL`: destination inbox; defaults to `info@anchalpiston.com`
 
 Copy `.env.example` to `.env.local` for local testing. Never commit real secrets.
