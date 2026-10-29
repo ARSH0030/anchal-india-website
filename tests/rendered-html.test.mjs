@@ -22,7 +22,7 @@ test("production site passes route and RFQ smoke checks", { timeout: 60_000 }, a
       const response = await fetch(`${origin}/`);
       if (response.ok) { ready = true; break; }
     } catch {}
-    await new Promise((resolve) => setTimeout(resolve, 250));
+    await new Promise(resolve => setTimeout(resolve, 250));
   }
   assert.equal(ready, true, `production server did not become ready\n${serverOutput}`);
 

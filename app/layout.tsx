@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { CommunicationDock, Footer, Navigation } from "@/components/navigation";
 import "./globals.css";
+import "./atlas.css";
 
 export const metadata:Metadata={
-  metadataBase:new URL("https://www.anchalpiston.com"),
+ metadataBase:new URL("https://www.anchalpiston.com"),
  applicationName:"Anchal India",
  title:{default:"Anchal India | Complete Automotive Solutions",template:"%s | Anchal India"},
  description:"A global automotive solutions company combining own brands, trusted partner brands, application expertise and international supply capability.",
@@ -19,7 +20,7 @@ const organizationJsonLd={
  "@context":"https://schema.org",
  "@type":"Organization",
  name:"Anchal India",
-    url:"https://www.anchalpiston.com",
+ url:"https://www.anchalpiston.com",
  email:"info@anchalpiston.com",
  telephone:"+91 99990 29920",
  foundingDate:"2006",
