@@ -1,5 +1,5 @@
 import { PageCta, PartFinder, SectionTitle, VehicleExplorer } from "@/components/site";
-export const metadata={title:"Products & Parts Finder | Anchal India"};
+export const metadata={title:"Products & Parts Finder",description:"Explore Anchal India product systems and start an application-led automotive parts enquiry.",alternates:{canonical:"/products"}};
 export default function Products(){
  return <>
   <section className="products-hero"><div className="product-orbit"/><div className="shell"><p>PRODUCTS + APPLICATION INTELLIGENCE</p><h1>Know the vehicle.<br/>Know the code.<br/><em>Find the solution.</em></h1><span>A premium gateway into Anchal India’s two- and three-wheeler product ecosystem.</span></div></section>

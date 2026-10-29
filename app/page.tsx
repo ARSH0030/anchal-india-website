@@ -1,5 +1,8 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { BeyondGrid, BrandMarquee, PageCta, SectionTitle, VehicleExplorer, WorldMap } from "@/components/site";
+
+export const metadata:Metadata={alternates:{canonical:"/"}};
 
 export default function Home() {
   return <>
