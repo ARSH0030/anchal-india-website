@@ -34,7 +34,7 @@ export interface CatalogRepository {
   getVehicle(id: string): Promise<Vehicle | null>;
 }
 
-export const catalogRepository: CatalogRepository = {
+export const mockCatalogRepository: CatalogRepository = {
   async listVehicles() { return vehicles; },
   async getVehicle(id) { return vehicles.find(v => v.id === id) ?? null; },
 };
